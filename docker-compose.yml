@@ -1,0 +1,15 @@
+services:
+  oracle:
+    image: gvenzl/oracle-xe:21-slim-faststart
+    container_name: jonathan-carvalho-oracle
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PASSWORD=admin
+      - APP_USER=admin
+      - APP_USER_PASSWORD=admin
+    healthcheck:
+      test: ["CMD-SHELL", "ls /opt/oracle/oradata/XE"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
