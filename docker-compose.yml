@@ -8,8 +8,4 @@ services:
       - ORACLE_PASSWORD=admin
       - APP_USER=admin
       - APP_USER_PASSWORD=admin
-    healthcheck:
-      test: ["CMD-SHELL", "ls /opt/oracle/oradata/XE"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
+
